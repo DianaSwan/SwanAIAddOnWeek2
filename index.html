@@ -3,52 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="src/styles.css" />
+    <title>Kenyan Poem Generator</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
-
-    <title>AI Kenyan Poems Generator</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>AI French Poem Generator</h1>
-      </header>
+    <h1>Kenyan Poem Generator</h1>
 
-      <main>
-        <form class="form">
-          <input
-            type="text"
-            placeholder="Enter the topic of the Kenyan poem"
-            autofocus
-            required
-            autocomplete="off"
-            class="instructions"
-          />
-          <input type="submit" class="submit-button" />
-        </form>
+    <form>
+      <input type="text" class="instructions" placeholder="Enter poem prompt" />
+      <button type="submit">Generate Poem</button>
+    </form>
 
-        <div id="poem" class="poem">
-          Your wings are strong,
-          <br />
-          Flap them into a song,
-          <br />
-          Soar high like an eagle
-        </div>
-      </main>
-      <footer>
-        This AI project was coded by
-        <a href="https://github.com/DianaSwan" target="_blank">Diana Swan</a> is
-        <a href="https://github.com/DianaSwan/SwanAIAddOnWeek2" target="_blank"
-          >open-sourced on GitHub</a
-        >
-        and
-        <a href="https://kenyanpoemsgenerator.netlify.app/" target="_blank"
-          >hosted on Netlify</a
-        >.
-      </footer>
-    </div>
-    <script src="src/index.js"></script>
+    <div id="poem"></div>
+
+    <script src="script.js"></script>
   </body>
 </html>
