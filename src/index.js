@@ -1,11 +1,13 @@
-document.querySelector("form").addEventListener("submit", function (event) {
+function generatePoem(event) {
   event.preventDefault();
 
-  const fakePoem = `
-      Your wings are strong, <br>
-      Flap them into a song, <br>
-      Soar high like an eagle.
-    `;
+  new Typewriter("#poem", {
+    strings: "Your wings are strong,",
+    autoStart: true,
+    delay: 1,
+    cursor: "",
+  });
+}
 
-  document.querySelector("#fakeContent").innerHTML = fakePoem;
-});
+let poemFormElement = document.querySelector("#poem-generator-form");
+poemFormElement.addEventListener("submit", generatePoem);
