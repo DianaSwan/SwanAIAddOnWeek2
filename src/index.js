@@ -3,14 +3,18 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
   alert("Generating a poem...");
 
-  let prompt = document.querySelector(".instructions").value;
+  let prompt = document.querySelector(".instructions").value.trim();
   let context = "Kenyan poem";
   let apiKey = "24a843192c3oc0c5tab227801f7a3edf";
 
   axios
-    .get(
-      `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`
-    )
+    .get("https://api.shecodes.io/ai/v1/generate", {
+      params: {
+        prompt: prompt,
+        context: context,
+        key: apiKey,
+      },
+    })
     .then((response) => {
       const poem = response.data.text;
 
