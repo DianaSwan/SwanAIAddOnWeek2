@@ -3,13 +3,29 @@ document.querySelector("form").addEventListener("submit", function (event) {
 
   alert("Generating a poem...");
 
-  const poemContainer = document.querySelector("#poem");
-  poemContainer.innerHTML = "";
+  let prompt = document.querySelector(".instructions").value;
+  let context = "Kenyan poem";
+  let apiKey = "24a843192c3oc0c5tab227801f7a3edf";
 
-  const typewriter = new Typewriter(poemContainer, {
-    loop: false,
-    delay: 75,
-  });
+  axios
+    .get(
+      `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`
+    )
+    .then((response) => {
+      const poem = response.data.text;
 
-  typewriter.typeString("Your wings are strong,").start();
+      const poemContainer = document.querySelector("#poem");
+      poemContainer.innerHTML = "";
+
+      const typewriter = new Typewriter(poemContainer, {
+        loop: false,
+        delay: 75,
+      });
+
+      typewriter.typeString(poem).start();
+    })
+    .catch((error) => {
+      console.error("Error generating poem:", error);
+      alert("Failed to generate a poem. Please try again.");
+    });
 });
