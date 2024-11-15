@@ -14,10 +14,12 @@ function generatePoem(response) {
 
 function showPoemResponse(event) {
   event.preventDefault();
-  let aiPrompt = "Please tell me a poem about love.";
-  let context = "You are a poet in love. Share a 4 line poem of adoration";
   let apiKey = "24a843192c3oc0c5tab227801f7a3edf";
+
+  let context = "You are a poet in love. Share a 4 line poem of adoration";
+  let aiPrompt = "Please tell me a poem about love.";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${aiPrompt}&context=${context}&key=${apiKey}`;
+
   let poemElement = document.querySelector("#poem");
   poemElement.innerHTML = "Generating your poem... please wait.";
 
