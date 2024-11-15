@@ -1,47 +1,50 @@
 body {
   background-color: #c2bdef;
   font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
-
 .container {
+  margin: 120px auto;
   max-width: 600px;
-  text-align: center;
 }
 
-header h1 {
-  font-weight: 800;
-  font-size: 36px;
-  color: black;
+header {
   margin-bottom: 30px;
 }
 
+h1 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.5;
+  color: black;
+}
+
 .form {
+  padding: 50px;
+  background-color: white;
+  box-shadow: 0px 20px 60px #c3bef0;
+  border-radius: 10px;
   display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .instructions {
-  flex: 1;
   padding: 15px;
-  border: 2px solid grey;
-  border-radius: 50px;
+  border: 30px solid grey;
+  width: 80%;
   font-size: 16px;
+  border-radius: 50px;
+  line-height: 20px;
+  color: black;
 }
 
 .submit-button {
+  margin-left: 10px;
   background-color: #1a0f7b;
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 15px 24px;
+  padding: 14px 24px;
+  width: 150px;
   font-size: 16px;
-  cursor: pointer;
 }
