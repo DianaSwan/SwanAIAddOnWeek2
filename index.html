@@ -3,21 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kenyan Poem Generator</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Swan AI Poems Generator</title>
   </head>
   <body>
-    <h1>Kenyan Poem Generator</h1>
+    <div class="container">
+      <header>
+        <h1>AI Poems Generator</h1>
+      </header>
 
-    <form>
-      <input type="text" class="instructions" placeholder="Enter poem prompt" />
-      <button type="submit">Generate Poem</button>
-    </form>
+      <main>
+        <div class="form-container">
+          <form id="poem-generator-form">
+            <input
+              type="text"
+              placeholder="Enter the topic of the poem"
+              autofocus
+              required
+              autocomplete="off"
+              class="instructions"
+              id="user-instructions"
+            />
+            <input type="submit" class="submit-button" />
+          </form>
+          <div class="hint">i.e: Love, Flower or Nairobi</div>
+        </div>
+        <div class="poem hidden" id="poem"></div>
+      </main>
 
-    <div id="poem"></div>
-
-    <script src="script.js"></script>
+      <footer>
+        This AI project was coded by
+        <a href="https://github.com/DianaSwan" target="_blank">Diana Swan</a>
+        and is
+        <a href="https://github.com/DianaSwan/SwanAIAddOnWeek2" target="_blank">
+          open-sourced on GitHub</a
+        >
+        and is
+        <a href="https://swanaipoemsgenerator.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >.
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

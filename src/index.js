@@ -1,33 +1,28 @@
-function generatePoem(response) {
-  console.log(response.data.text);  
-  const poemContainer = document.querySelector("#poem");
-
-  
-  poemContainer.innerHTML = "";
-
-  
-  new Typewriter(poemContainer, {
-    strings: response.data.text,  
+function displayPoem(response) {
+  new Typewriter("#poem", {
+    strings: response.data.answer,
     autoStart: true,
+    delay: 1,
     cursor: "",
-    delay: 75,  
   });
 }
 
-function showPoemResponse(event) {
+function generatePoem(event) {
   event.preventDefault();
-  let apiKey = "24a843192c3oc0c5tab227801f7a3edf";  
 
-  let context = "You are a poet in love. Share a poem of complete adoration";
-  let aiPrompt = "Please tell me a poem about love.";
-  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${aiPrompt}&context=${context}&key=${apiKey}`;
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "tfa043ea6f3c9a3bbf69c350be2o392e";
+  let context =
+    "You are a romantic Poem expert and love to write short poems. You mission is to generate a 4 line poem and separate each line with a <br />. Make sure to follow the user instructions. Do not Include a title to the poem . Sign the poem with 'SheCodes AI' inside a <strong> element at the end of the poem and NOT at the beginning";
+  let prompt = `User instructions: Generate an English poem about ${instructionsInput.value}`;
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
   let poemElement = document.querySelector("#poem");
-  poemElement.innerHTML = "Generating your poem... please wait.";
+  poemElement.classList.remove("hidden");
+  poemElement.innerHTML = `<div class="generating">⏳ Generating a poem about ${instructionsInput.value}</div>`;
 
- 
-  axios
-    .get(apiUrl)
-    .then(generatePoem)  
-    .catch((error) => {
-      console.error("Error generating poem:", 
+  axios.get(apiURL).then(displayPoem);
+}
+
+let poemFormElement = document.querySelector("#poem-generator-form");
+poemFormElement.addEventListener("submit", generatePoem);
