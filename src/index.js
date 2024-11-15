@@ -1,13 +1,15 @@
-function generatePoem(event) {
+document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  new Typewriter("#poem", {
-    strings: "Your wings are strong,",
-    autoStart: true,
-    delay: 1,
-    cursor: "",
-  });
-}
+  alert("Generating a poem...");
 
-let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener("submit", generatePoem);
+  const poemContainer = document.querySelector("#poem");
+  poemContainer.innerHTML = "";
+
+  const typewriter = new Typewriter(poemContainer, {
+    loop: false,
+    delay: 75,
+  });
+
+  typewriter.typeString("Your wings are strong,").start();
+});
