@@ -1,142 +1,112 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: #f0f0fa;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #333;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-}
-
-a {
-  color: #665dfe;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: #433acc;
+  background-color: #ebfffa;
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 .container {
-  max-width: 700px;
-  padding: 20px;
-  margin: auto;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 2.5em;
-  color: transparent;
-  background: linear-gradient(90deg, #6a5bf2, #4434bc);
-  -webkit-background-clip: text;
-  margin-bottom: 15px;
+  font-size: 36px;
+  line-height: 1.5;
+  text-align: center;
 }
 
-.form-container {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  transition: transform 0.3s;
+main {
+  margin-bottom: 30px;
 }
 
-.form-container:hover {
-  transform: translateY(-5px);
+header {
+  margin-bottom: 30px;
+}
+
+a {
+  color: #0dceda;
 }
 
 form {
   display: flex;
-  gap: 10px;
-  align-items: center;
 }
 
-.instructions {
-  flex: 1;
-  padding: 14px;
-  font-size: 15px;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fafafa;
-  transition: border-color 0.3s;
-}
-
-.instructions:focus {
-  border-color: #665dfe;
-  outline: none;
-}
-
-.submit-button {
-  background: linear-gradient(45deg, #6a5bf2, #4434bc);
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.submit-button:hover {
-  background: linear-gradient(45deg, #4434bc, #6a5bf2);
+.form-container {
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .hint {
-  margin-top: 8px;
+  line-height: 1.5;
   font-size: 13px;
-  color: #888;
+  margin-top: 5px;
+}
+
+.instructions {
+  background-color: #ebfffa;
+  padding: 15px;
+  border: 1px solid rgba(39, 33, 66, 0.5);
+  width: 80%;
+  font-size: 18px;
+  border-radius: 30px;
+  line-height: 20px;
+  color: #023020;
+}
+
+.submit-button {
+  margin-left: 10px;
+  background: #6ef3d6;
+  color: #023020;
+  border: none;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 30px;
+  padding: 14px 24px;
 }
 
 .poem {
-  margin-top: 20px;
   font-size: 16px;
   padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #665dfe;
-  transition: box-shadow 0.3s;
+  line-height: 2;
+  border-left: 3px solid #6ef3d6;
 }
 
-.poem:hover {
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+.hidden {
+  display: none;
 }
 
 .poem strong {
-  color: #4434bc;
-  font-weight: 600;
+  color: #023020;
 }
 
 footer {
+  border-top: 1px dashed #6ef3d6;
+  padding: 30px 0 0 0;
   text-align: center;
-  font-size: 14px;
-  color: #777;
-  margin-top: 40px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .generating {
-  animation: fade-in 1.5s ease-in-out infinite;
+  animation: blink-animation 1s step-start(5, start) infinite;
 }
 
-@keyframes fade-in {
-  0%,
-  100% {
-    opacity: 1;
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
   }
-  50% {
-    opacity: 0.5;
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
   }
 }

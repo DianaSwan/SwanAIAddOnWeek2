@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
-    <title>Swan AI Poems Generator</title>
+    <title>AI Poem Generator</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>AI Poems Generator</h1>
+        <h1>AI Poem Generator</h1>
       </header>
 
       <main>
@@ -22,14 +26,14 @@
               placeholder="Enter the topic of the poem"
               autofocus
               required
-              autocomplete="off"
               class="instructions"
               id="user-instructions"
             />
             <input type="submit" class="submit-button" />
           </form>
-          <div class="hint">i.e: Love, Flower or Nairobi</div>
+          <div class="hint">i.e. love, hope, or happiness</div>
         </div>
+
         <div class="poem hidden" id="poem"></div>
       </main>
 
@@ -40,12 +44,13 @@
         <a href="https://github.com/DianaSwan/SwanAIAddOnWeek2" target="_blank">
           open-sourced on GitHub</a
         >
-        and is
+        and
         <a href="https://swanaipoemsgenerator.netlify.app/" target="_blank"
           >hosted on Netlify</a
-        >.
+        >
       </footer>
     </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
