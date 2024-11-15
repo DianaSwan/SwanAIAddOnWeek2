@@ -30,10 +30,12 @@ h1 {
   padding: 20px;
   box-shadow: 0px 20px 60px #3226a1;
   border-radius: 10px;
-  margin-bottom: 30px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .instructions {
+  flex: 1;
   padding: 16px;
   border: 1px solid rgba(39, 33, 66, 0.5);
   width: 80%;
